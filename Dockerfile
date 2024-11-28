@@ -13,6 +13,8 @@ RUN \
   adduser -Ss /bin/false -g webssh webssh && \
   chown -R webssh:webssh /code
 
+RUN chmod a+x main.sh
 EXPOSE 8888/tcp
 USER webssh
-CMD ["python", "run.py"]
+
+CMD ["./main.sh"]
